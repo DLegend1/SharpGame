@@ -1,7 +1,5 @@
-﻿namespace SharpGame.Entity
-{
-    public abstract class Buff
-    {
+﻿namespace SharpGame.Entities {
+    public abstract class Buff {
         public string Name { get; set; }
         public string Description { get; set; }
         public abstract void Add(Entity target);
