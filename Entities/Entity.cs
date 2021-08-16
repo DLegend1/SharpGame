@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace SharpGame.Entity
+namespace SharpGame.Entities
 {
     public class Entity
     {
@@ -16,5 +17,13 @@ namespace SharpGame.Entity
         public List<Buff> Buffs { get; set; }
         public List<Ability> Abilities { get; set; }
 
+        public event EventHandler OnAttack;
+        public event EventHandler OnTakingDamage;
+        public event EventHandler OnTargeted;
+        public event EventHandler OnDeath;
+        public event EventHandler OnUseItem;
+        public event EventHandler OnTurnStart;
+        public event EventHandler OnTurnEnd;
+        public event EventHandler OnRoundStart;
     }
 }

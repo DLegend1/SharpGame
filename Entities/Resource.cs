@@ -1,4 +1,4 @@
-﻿namespace SharpGame.Entity
+﻿namespace SharpGame.Entities
 {
     public class Resource
     {
