@@ -31,5 +31,19 @@ namespace SharpGame.Models {
                 Console.WriteLine($"{sender.Name} heals itself for {amount}. (Now at {sender.Health.Current} HP)");
             })
             .Build();
+
+        public static Weapon VampSword = new WeaponBuilder()
+            .WithName("Needle Sword")
+            .WithUseEffect((s,args) =>
+            {
+                var sender = s as Entity;
+                int damageAmount = 8;
+                var healthBeforeAttack = args.Target.Health.Current;
+                args.Target.TakeDamage(damageAmount);
+                var damageDealt = healthBeforeAttack - args.Target.Health.Current;
+                sender.Health.Increase(damageDealt);
+                Console.WriteLine($"I attacked for {damageAmount} damage and healed {damageDealt} health");
+            })
+            .Build();
     }
 }

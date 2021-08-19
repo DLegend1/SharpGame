@@ -21,6 +21,7 @@ namespace SharpGame.Entities
 
         public event EventHandler<CombatEventArgs> OnAttack;
         public event EventHandler<CombatEventArgs> OnTakingDamage;
+
         public event EventHandler OnTargeted;
         public event EventHandler OnDeath;
         public event EventHandler OnUseItem;
@@ -32,6 +33,7 @@ namespace SharpGame.Entities
         {
             if (this.Weapon != null)
             {
+                //TODO this.OnBeginAttack
                 this.OnAttack(this, new CombatEventArgs { Target = target });
             }
             else

@@ -12,20 +12,24 @@ namespace SharpGame
         {
             Monster dummy = new MonsterBuilder()
                 .WithName("Dummy")
-                .WithHealth(10)
+                .WithHealth(50)
                 .WithDamageTrigger((sender, args) => {
                     var s = sender as Monster;
                     s.Health.Current -= args.Damage;
                     Console.WriteLine($"{s.Name} took {args.Damage} damage");
                 })
-                .WithWeapon(Weapons.HealStaff)
+                .WithWeapon(Weapons.VampSword)
                 .Build();
 
-            var testWolf = Wolf.Instance();
-            
-            testWolf.Attack(dummy);
+            //var testWolf = Wolf.Instance();
+            //testwolf.attack(dummy);
+            //dummy.attack(testwolf);
 
-            dummy.Attack(testWolf);
+            var testGolem = StoneGolem.Instance();
+            var testGolem2 = StoneGolem.Instance();
+            testGolem.Attack(dummy);
+            dummy.Attack(testGolem);
+            Console.WriteLine(testGolem2.Health.Current);
 
             Console.ReadKey();
         }
