@@ -1,15 +1,15 @@
-﻿using SharpGame.Helpers.Interfaces;
+﻿using SharpGame.Helpers.Events;
+using SharpGame.Helpers.Interfaces;
 using System;
 
 namespace SharpGame.Entities
 {
-    public abstract class Weapon : IAttachable
+    public class Weapon : IAttachable
     {
         public string Name { get; set; }
 
-
-        public abstract void Use (object attacker, EventArgs weaponEventArgs);
-
+        public EventHandler<WeaponEventArgs> Use;
+        
         public void Add(Entity user)
         {
             user.Weapon = this;

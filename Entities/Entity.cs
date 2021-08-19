@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SharpGame.Entities
 {
-    public class Entity
+    public abstract class Entity
     {
         public string Name { get; set; }
         public Resource Health { get; set; }
