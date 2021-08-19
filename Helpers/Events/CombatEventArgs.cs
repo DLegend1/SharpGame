@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace SharpGame.Helpers.Events
 {
-    public class WeaponEventArgs : EventArgs
+    public class CombatEventArgs : EventArgs
     {
         public Entity Target { get; set; }
+        public int Damage { get; set; }
     }
 }
