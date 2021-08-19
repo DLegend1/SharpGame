@@ -12,6 +12,8 @@ namespace SharpGame.Models {
             .WithName("Wolf")
             .WithHealth(100)
             .WithEnergy(20)
+            .WithAttackTrigger((s, a) => { Console.WriteLine("Awoo!"); })
+            .WithWeapon(Weapons.WolfClaw)
             .Build();
     }
 }

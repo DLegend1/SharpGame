@@ -1,4 +1,5 @@
 ﻿using SharpGame.Entities;
+using SharpGame.Helpers.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace SharpGame.Helpers.Builders {
             return this;
         }
 
-        public WeaponBuilder WithUseEffect(EventHandler useEffect)
+        public WeaponBuilder WithUseEffect(EventHandler<CombatEventArgs> useEffect)
         {
             this.weapon.Use = useEffect;
             return this;

@@ -1,4 +1,5 @@
 ﻿using SharpGame.Helpers.Events;
+using SharpGame.Helpers.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -66,6 +67,5 @@ namespace SharpGame.Entities
         {
             this.OnRoundStart(this, EventArgs.Empty);
         }
-        
     }
 }

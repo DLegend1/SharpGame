@@ -11,7 +11,7 @@ namespace SharpGame.Helpers.Extensions
     {
         public static void AddWeapon(this Entity user, Weapon weapon)
         {
-            weapon.Add(user);
+            weapon.Attach(user);
         }
         
         public static void RemoveWeapon(this Entity user, Weapon weapon)

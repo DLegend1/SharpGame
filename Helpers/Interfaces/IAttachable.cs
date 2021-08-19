@@ -9,7 +9,7 @@ namespace SharpGame.Helpers.Interfaces
 {
     public interface IAttachable
     {
-        public void Add(Entity user);
+        public void Attach(Entity user);
         public void Remove(Entity user);
     }
 }

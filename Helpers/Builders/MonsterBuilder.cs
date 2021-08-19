@@ -1,4 +1,5 @@
 ﻿using SharpGame.Entities;
+using SharpGame.Helpers.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace SharpGame.Helpers.Builders {
 
         public MonsterBuilder WithEnergy(int maxEnergy)
         {
-            this.monster.Energy = new Resource { Name = "Health", Current = maxEnergy, Max = maxEnergy};
+            this.monster.Energy = new Resource { Name = "Energy", Current = maxEnergy, Max = maxEnergy};
             return this;
         }
 
@@ -57,7 +58,7 @@ namespace SharpGame.Helpers.Builders {
 
         public MonsterBuilder WithWeapon(Weapon weapon)
         {
-            this.monster.Weapon = weapon;
+            weapon.Attach(this.monster);
             return this;
         }
 
@@ -85,13 +86,13 @@ namespace SharpGame.Helpers.Builders {
             return this;
         }
 
-        public MonsterBuilder WithAttackTrigger(EventHandler onAttack)
+        public MonsterBuilder WithAttackTrigger(EventHandler<CombatEventArgs> onAttack)
         {
             this.monster.OnAttack += onAttack;
             return this;
         }
 
-        public MonsterBuilder WithDamageTrigger(EventHandler onDamage)
+        public MonsterBuilder WithDamageTrigger(EventHandler<CombatEventArgs> onDamage)
         {
             this.monster.OnTakingDamage += onDamage;
             return this;

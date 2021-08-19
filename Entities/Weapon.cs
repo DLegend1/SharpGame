@@ -8,9 +8,9 @@ namespace SharpGame.Entities
     {
         public string Name { get; set; }
 
-        public EventHandler<WeaponEventArgs> Use;
+        public EventHandler<CombatEventArgs> Use;
         
-        public void Add(Entity user)
+        public void Attach(Entity user)
         {
             user.Weapon = this;
             user.OnAttack += this.Use;
