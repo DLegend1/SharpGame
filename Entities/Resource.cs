@@ -15,5 +15,24 @@
         {
             Current = (Current - value) < 0 ? 0 : Current - value;
         }
+
+        public void IncreaseMax(int value)
+        {
+            this.Max += value;
+        }
+
+        public void DecreaseMax(int value)
+        {
+            this.Max -= value;
+            if(this.Current > this.Max)
+            {
+                this.Current = this.Max;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Name}: {this.Current}/{this.Max}";
+        }
     }
 }

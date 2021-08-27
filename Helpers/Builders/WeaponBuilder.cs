@@ -17,7 +17,11 @@ namespace SharpGame.Helpers.Builders {
 
         public Weapon Build()
         {
-            return this.weapon;
+            return new Weapon
+            {
+                Name = this.weapon.Name,
+                Use = this.weapon.Use
+            };
         }
 
         public WeaponBuilder WithName(string name)

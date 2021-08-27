@@ -1,4 +1,5 @@
 ﻿using SharpGame.Entities;
+using SharpGame.Entities.Buffs;
 using SharpGame.Helpers.Events;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SharpGame.Helpers.Builders {
+namespace SharpGame.Helpers.Builders
+{
     public class MonsterBuilder {
         private Monster monster { get; set; }
 
@@ -74,7 +76,7 @@ namespace SharpGame.Helpers.Builders {
             return this;
         }
 
-        public MonsterBuilder WithBuffs(List<Buff> buffs)
+        public MonsterBuilder WithBuffs(HashSet<Buff> buffs)
         {
             this.monster.Buffs = buffs;
             return this;

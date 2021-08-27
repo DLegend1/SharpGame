@@ -21,5 +21,10 @@ namespace SharpGame.Entities
             user.OnAttack -= this.Use;
             user.Weapon = null;
         }
+
+        public override string ToString()
+        {
+            return $"{this.Name}";
+        }
     }
 }
