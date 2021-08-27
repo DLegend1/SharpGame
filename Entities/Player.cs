@@ -1,4 +1,4 @@
-﻿namespace SharpGame.Entity
+﻿namespace SharpGame.Entities
 {
     class Player : Entity
     {
